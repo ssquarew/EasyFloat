@@ -86,8 +86,9 @@ internal class FloatingWindowHelper(val context: Context, var config: FloatConfi
             // 设置浮窗以外的触摸事件可以传递给后面的窗口、不自动获取焦点
             flags = if (config.immersionStatusBar)
             // 没有边界限制，允许窗口扩展到屏幕外
-                FLAG_NOT_TOUCH_MODAL or FLAG_NOT_FOCUSABLE or FLAG_LAYOUT_NO_LIMITS
-            else FLAG_NOT_TOUCH_MODAL or FLAG_NOT_FOCUSABLE
+                FLAG_NOT_TOUCH_MODAL or FLAG_NOT_FOCUSABLE or FLAG_LAYOUT_NO_LIMITS or FLAG_SHOW_WHEN_LOCKED or FLAG_DISMISS_KEYGUARD or FLAG_TURN_SCREEN_ON or FLAG_ALLOW_LOCK_WHILE_SCREEN_ON
+            else FLAG_NOT_TOUCH_MODAL or FLAG_NOT_FOCUSABLE or FLAG_SHOW_WHEN_LOCKED or FLAG_DISMISS_KEYGUARD or FLAG_TURN_SCREEN_ON or FLAG_ALLOW_LOCK_WHILE_SCREEN_ON
+            
             width = if (config.widthMatch) MATCH_PARENT else WRAP_CONTENT
             height = if (config.heightMatch) MATCH_PARENT else WRAP_CONTENT
 
